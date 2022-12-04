@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanks</title>
+</head>
+<body>
+
+<h1 align="center"> Your Record is added successfully</h1>
+<h1 align="center">Thank You</h1>
+{% if obj %}
+<div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Previous Data</h2>
+
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+    <th>full_name</th>
+    <th>email</th>
+    <th>mobile_no</th>
+    <th>bio</th>
+    <th>course_name</th>
+    <th>course_duration</th>
+    <th>course_passout_year</th>
+    <th>course_percentage</th>
+    <th>company_name</th>
+    <th>duration_of_job</th>
+    <th>job_desc</th>
+    <th>sallary</th>
+    <th>project_name</th>
+    <th>project_duration</th>
+    <th>project_description</th>
+    <th>your_role_in_project</th>
+
+
+    </tr>
+                </thead>
+                <tbody>
+
+    {% for emp in obj %}
+
+    <tr>
+        <td>{{emp.full_name}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.mobile_no}}</td>
+        <td>{{emp.bio}}</td>
+        <td>{{emp.course_name}}</td>
+        <td>{{emp.course_duration}}</td>
+        <td>{{emp.course_passout_year}}</td>
+        <td>{{emp.course_percentage}}</td>
+        <td>{{emp.company_name}}</td>
+        <td>{{emp.job_desc}}</td>
+        <td>{{emp.sallary}}</td>
+        <td>{{emp.project_name}}</td>
+        <td>{{emp.project_duration}}</td>
+        <td>{{emp.project_description}}</td>
+        <td>{{emp.your_role_in_project}}</td>
+
+    </tr>
+    {% endfor %}
+
+               </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+
+<h1> Record is not found </h1>.
+
+{% endif %}
+
+
+</body>
+</html>
